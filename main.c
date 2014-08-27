@@ -6,6 +6,7 @@ int8_t pressed = 0;
 
 int main() {
 	/* Set up I/O */
+	DDRB = 0;
 	DDRB &= ~_BV(4) & ~_BV(5);
 	DDRB |= _BV(0) | _BV(1) | _BV(2) | _BV(3);
 

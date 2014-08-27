@@ -3,11 +3,13 @@ CC = avr-gcc
 OBJCOPY = avr-objcopy
 DUDE = avrdude
 SIZE = avr-size
+SIM = simavr
+
 TARGET = attiny2313
 CLOCK = 8000000
 
-# Recommended build options
-CFLAGS = -Wall -Wno-overflow -pedantic -std=c99 -Ofast -mmcu=$(TARGET) -DF_CPU=$(CLOCK)
+#CFLAGS = -Wall -Wno-overflow -pedantic -std=c99 -Ofast -mmcu=$(TARGET) -DF_CPU=$(CLOCK)
+CFLAGS =  -g3 -gdwarf-2 -Wall -pedantic -std=c99 -mmcu=$(TARGET) -DF_CPU=$(CLOCK)
 OBJFLAGS = -j .text -j .data -O ihex
 DUDEFLAGS = -p $(TARGET) -c avrisp -b 19200 -P /dev/ttyACM0
 #DUDEFLAGS = -p $(TARGET) -c usbtiny -B 1
@@ -21,6 +23,9 @@ all: main.hex
 # With this, you can flash the firmware
 flash: main.hex
 	$(DUDE) $(DUDEFLAGS) -U flash:w:$<
+
+simulate: main.hex
+	$(SIM) -vvv -g -t -mcu $(TARGET) -freq $(CLOCK) main.hex
 
 # Housekeeping if you want it
 clean:
