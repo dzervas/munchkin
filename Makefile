@@ -5,7 +5,7 @@ DUDE = avrdude
 SIZE = avr-size
 SIM = simavr
 
-TARGET = attiny2313
+TARGET = attiny85
 CLOCK = 8000000
 
 #CFLAGS = -Wall -Wno-overflow -pedantic -std=c99 -Ofast -mmcu=$(TARGET) -DF_CPU=$(CLOCK)
