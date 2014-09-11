@@ -42,14 +42,20 @@ int main() {
 				PORTB |= (state & (15 << 4)) >> 4;
 				state &= ~(15 << 4);
 			}
-		} else if (!(DEBOUNCED & _BV(4)) && (PINB & 15) > 1 && !(state & _BV(0))) {
+		} else if (!(DEBOUNCED & _BV(4)) && !(state & _BV(0))) {
 			state |= _BV(0);
 			state &= ~_BV(2);
-			PORTB--;
-		} else if (!(DEBOUNCED & _BV(5)) && (PINB & 15) < 15 && !(state & _BV(0))) {
+			if ((PINB & 15) > 1)
+				PORTB--;
+			else
+				PORTB |= 15;
+		} else if (!(DEBOUNCED & _BV(5)) && !(state & _BV(0))) {
 			state |= _BV(0);
 			state |= _BV(2);
-			PORTB++;
+			if ((PINB & 15) < 15)
+				PORTB++;
+			else
+				PORTB &= ((15 << 4) | 1);
 		} else if (DEBOUNCED == (_BV(4) | _BV(5)))
 			state &= ~_BV(0);
 	}
