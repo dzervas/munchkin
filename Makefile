@@ -24,6 +24,9 @@ all: main.hex
 flash: main.hex
 	$(DUDE) $(DUDEFLAGS) -U flash:w:$<
 
+fuse:
+	$(DUDE) $(DUDEFLAGS) -U hfuse:w:0x5f:m -U efuse:w:0xff:m -U lfuse:w:0xd2:m
+
 simulate: main.hex
 	$(SIM) -vvv -g -t -mcu $(TARGET) -freq $(CLOCK) main.hex
 
