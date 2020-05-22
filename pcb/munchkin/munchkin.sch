@@ -1,0 +1,229 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MCU_Microchip_ATtiny:ATtiny85-20SU U1
+U 1 1 5E3F3345
+P 2450 2100
+F 0 "U1" H 1921 2146 50  0000 R CNN
+F 1 "ATtiny85-20SU" H 1921 2055 50  0000 R CNN
+F 2 "Package_SO:SOIJ-8_5.3x5.3mm_P1.27mm" H 2450 2100 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/atmel-2586-avr-8-bit-microcontroller-attiny25-attiny45-attiny85_datasheet.pdf" H 2450 2100 50  0001 C CNN
+	1    2450 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Battery_Cell BT1
+U 1 1 5E3F3F0E
+P 950 2200
+F 0 "BT1" H 1068 2296 50  0000 L CNN
+F 1 "3V3" H 1068 2205 50  0000 L CNN
+F 2 "" V 950 2260 50  0001 C CNN
+F 3 "~" V 950 2260 50  0001 C CNN
+	1    950  2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D1
+U 1 1 5E3F4D99
+P 3600 1450
+F 0 "D1" H 3593 1575 50  0000 C CNN
+F 1 "LED" H 3593 1575 50  0001 C CNN
+F 2 "" H 3600 1450 50  0001 C CNN
+F 3 "~" H 3600 1450 50  0001 C CNN
+	1    3600 1450
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	2450 1500 1700 1500
+Wire Wire Line
+	950  1500 950  2000
+Wire Wire Line
+	950  2300 950  2700
+Wire Wire Line
+	950  2700 2450 2700
+$Comp
+L Device:LED D2
+U 1 1 5E3F9067
+P 3600 1850
+F 0 "D2" H 3593 1975 50  0000 C CNN
+F 1 "LED" H 3593 1975 50  0001 C CNN
+F 2 "" H 3600 1850 50  0001 C CNN
+F 3 "~" H 3600 1850 50  0001 C CNN
+	1    3600 1850
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:LED D3
+U 1 1 5E3F93EB
+P 3600 2200
+F 0 "D3" H 3593 2325 50  0000 C CNN
+F 1 "LED" H 3593 2325 50  0001 C CNN
+F 2 "" H 3600 2200 50  0001 C CNN
+F 3 "~" H 3600 2200 50  0001 C CNN
+	1    3600 2200
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:LED D4
+U 1 1 5E3F9849
+P 3600 2550
+F 0 "D4" H 3593 2675 50  0000 C CNN
+F 1 "LED" H 3593 2675 50  0001 C CNN
+F 2 "" H 3600 2550 50  0001 C CNN
+F 3 "~" H 3600 2550 50  0001 C CNN
+	1    3600 2550
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_Push SW2
+U 1 1 5E401031
+P 3650 3250
+F 0 "SW2" H 3650 3535 50  0000 C CNN
+F 1 "Left" H 3650 3444 50  0000 C CNN
+F 2 "" H 3650 3450 50  0001 C CNN
+F 3 "~" H 3650 3450 50  0001 C CNN
+	1    3650 3250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_Push SW3
+U 1 1 5E402AF1
+P 3650 3650
+F 0 "SW3" H 3650 3935 50  0000 C CNN
+F 1 "Right" H 3650 3844 50  0000 C CNN
+F 2 "" H 3650 3850 50  0001 C CNN
+F 3 "~" H 3650 3850 50  0001 C CNN
+	1    3650 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_SPST SW1
+U 1 1 5E404759
+P 1500 1500
+F 0 "SW1" H 1500 1735 50  0000 C CNN
+F 1 "SW_SPST" H 1500 1644 50  0000 C CNN
+F 2 "" H 1500 1500 50  0001 C CNN
+F 3 "~" H 1500 1500 50  0001 C CNN
+	1    1500 1500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1300 1500 950  1500
+$Comp
+L Device:R R1
+U 1 1 5E406515
+P 4200 1450
+F 0 "R1" V 3993 1450 50  0000 C CNN
+F 1 "1kOhm" V 4084 1450 50  0000 C CNN
+F 2 "" V 4130 1450 50  0001 C CNN
+F 3 "~" H 4200 1450 50  0001 C CNN
+	1    4200 1450
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3050 1800 3050 1450
+Wire Wire Line
+	3050 1450 3450 1450
+Wire Wire Line
+	3050 1900 3050 1850
+Wire Wire Line
+	3050 1850 3450 1850
+Wire Wire Line
+	3050 2000 3450 2000
+Wire Wire Line
+	3450 2000 3450 2200
+Wire Wire Line
+	3050 2100 3350 2100
+Wire Wire Line
+	3350 2100 3350 2550
+Wire Wire Line
+	3350 2550 3450 2550
+Wire Wire Line
+	3050 2200 3250 2200
+Wire Wire Line
+	3250 2200 3250 3250
+Wire Wire Line
+	3250 3250 3450 3250
+Wire Wire Line
+	3750 1450 4050 1450
+$Comp
+L Device:R R2
+U 1 1 5E420F32
+P 4200 1850
+F 0 "R2" V 3993 1850 50  0000 C CNN
+F 1 "1kOhm" V 4084 1850 50  0000 C CNN
+F 2 "" V 4130 1850 50  0001 C CNN
+F 3 "~" H 4200 1850 50  0001 C CNN
+	1    4200 1850
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R3
+U 1 1 5E421268
+P 4200 2200
+F 0 "R3" V 3993 2200 50  0000 C CNN
+F 1 "1kOhm" V 4084 2200 50  0000 C CNN
+F 2 "" V 4130 2200 50  0001 C CNN
+F 3 "~" H 4200 2200 50  0001 C CNN
+	1    4200 2200
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R4
+U 1 1 5E421683
+P 4200 2550
+F 0 "R4" V 3993 2550 50  0000 C CNN
+F 1 "1kOhm" V 4084 2550 50  0000 C CNN
+F 2 "" V 4130 2550 50  0001 C CNN
+F 3 "~" H 4200 2550 50  0001 C CNN
+	1    4200 2550
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3750 1850 4050 1850
+Wire Wire Line
+	3750 2200 4050 2200
+Wire Wire Line
+	3750 2550 4050 2550
+Wire Wire Line
+	3050 2300 3050 3650
+Wire Wire Line
+	3050 3650 3450 3650
+Wire Wire Line
+	4350 1450 4350 1850
+Wire Wire Line
+	4350 3250 3850 3250
+Connection ~ 4350 1850
+Wire Wire Line
+	4350 1850 4350 2200
+Connection ~ 4350 2200
+Wire Wire Line
+	4350 2200 4350 2550
+Connection ~ 4350 2550
+Wire Wire Line
+	4350 2550 4350 3250
+Wire Wire Line
+	3850 3250 3850 3650
+Connection ~ 3850 3250
+Wire Wire Line
+	3850 3650 3850 3900
+Wire Wire Line
+	3850 3900 2450 3900
+Wire Wire Line
+	2450 3900 2450 2700
+Connection ~ 3850 3650
+Connection ~ 2450 2700
+$EndSCHEMATC
